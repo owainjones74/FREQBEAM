@@ -27,8 +27,8 @@ function hook.Remove(event, name)
 	if not event then return end
 	if not name then return end
 	if not hook.cache[event] then return end
-	if hook.cache[event][name] then return end
-
+	if not hook.cache[event][name] then return end
+	
 	-- Register the hook under the provided event
 	hook.cache[event][name] = nil
 end
